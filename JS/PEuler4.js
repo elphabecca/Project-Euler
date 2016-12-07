@@ -4,13 +4,36 @@
 
 //Find the largest palindrome made from the product of two 3-digit numbers.
 
-var z=0
-for (var l='0';l<'3';l++){
-    var isDone=false;
-    for (var m='0';m<'3';m++){
-        for (var n='0';n<'3';n++){
-            z=(l+m+n);
-                console.log(z);
+function is_palindrome(num) {
+    num = num.toString();
+    len = num.length;
+
+    for (var i = 0, j = len-1; i <= len/2; i++, j--) {
+        if (num[i] !== num[j]) {
+            return false
         }
     }
+
+    return true
 }
+
+function pal_product() {
+    var maxProd = 0;
+
+    for (var i = 100; i < 1000; i++) {
+        console.log("\n***STARTING " + i + "***");
+        for (var j = 100; j < 1000; j++) {
+            if (is_palindrome(i*j)) {
+                if ((i*j) > maxProd) {
+                    maxProd = i*j;
+                }
+            }
+        }
+    }
+    return maxProd
+}
+
+console.log(pal_product());
+
+
+
