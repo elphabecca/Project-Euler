@@ -6,10 +6,10 @@
 
 
 
-for (var r=20;r<5000;r++){
+for (var r=20;r<300000000;r++){
     var isDiv = true;
     
-    for (var d=2;d<11;d++) {
+    for (var d=2;d<21;d++) {
         if (r%d!==0) {
             isDiv = false;
             break
