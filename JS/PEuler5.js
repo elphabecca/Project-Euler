@@ -4,14 +4,21 @@
 
 //What is the smallest positive number that is evenly divisible by all of the numbers from 1 to 20?
 
-var isDiv=true
-for (var r=1;r<5000;r++){
-    while (isDiv===true){
-        for (var d=2;d<11;d++)
-        if (r%d===0)
-            console.log(r);
-        break;
-    }  
+
+
+for (var r=20;r<5000;r++){
+    var isDiv = true;
+    
+    for (var d=2;d<11;d++) {
+        if (r%d!==0) {
+            isDiv = false;
+            break
+        }
+    }
+    if (isDiv) {
+        console.log("DUDE THIS ONE: " + r);
+        break
+    }
 }
 
 
